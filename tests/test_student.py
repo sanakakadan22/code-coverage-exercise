@@ -14,13 +14,13 @@ def test_init():
 def test_none_courses():
     name = "Ada Lovelace"
     level = "sophomore"
-
+    # courses = []
 
     ada = Student(name, level)
 
     assert ada.name == name
     assert ada.level == level
-    assert ada.courses == ["Art"]
+    assert ada.courses == []
 
 def test_add_class():
     new_class = 'Intro to Feminism'
@@ -54,6 +54,6 @@ def test_get_student_with_more_classes():
 
     # act
 
-    result = get_student_with_more_classes(ada, charles)
+    assert get_student_with_more_classes(ada, charles) == ada
+    assert get_student_with_more_classes(charles, ada) == ada
 
-    assert result == ada
